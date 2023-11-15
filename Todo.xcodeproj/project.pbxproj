@@ -127,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				0076A0D02B043F9000694310 /* TodosApp.xcdatamodeld */,
+				0076A0D32B043FC200694310 /* Persistence.swift */,
 				0076A0B22B03FA5900694310 /* AddTodo */,
 				0076A0B12B03FA2200694310 /* Networking */,
 				0076A0B02B03FA1600694310 /* LocalCaching */,
@@ -136,7 +137,6 @@
 				0076A0A82B03A00900694310 /* Model */,
 				0076A0822B03983C00694310 /* Assets.xcassets */,
 				0076A0842B03983C00694310 /* Preview Content */,
-				0076A0D32B043FC200694310 /* Persistence.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";

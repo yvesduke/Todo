@@ -14,10 +14,10 @@ extension ETodos {
         
         todos.forEach { todo in
             let eTodo = ETodos(context: moc)
-            eTodo.name = todo.name
-            eTodo.desc = todo.description
+            eTodo.name = todo.title
+            eTodo.desc = todo.title
             eTodo.id = Int16(todo.id)
-            eTodo.timestamp = todo.timeStamp
+//            eTodo.timestamp = todo.userID
         }
    
         try moc.save()
@@ -37,6 +37,7 @@ extension ETodos {
     }
     
     func toTodo()-> Todo {
-        return Todo(id: Int(id), name: name ?? "", description: desc ?? "", timeStamp: timestamp ?? "")
+//        return Todo(id: Int(id), name: name ?? "", description: desc ?? "", timeStamp: timestamp ?? "")
+        return Todo(userID: Int(id), id: Int(id), title: "", completed: false)
     }
 }
