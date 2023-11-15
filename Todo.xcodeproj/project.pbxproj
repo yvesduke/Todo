@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0076A07F2B03983B00694310 /* TodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A07E2B03983B00694310 /* TodoApp.swift */; };
-		0076A0812B03983B00694310 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A0802B03983B00694310 /* ContentView.swift */; };
 		0076A0832B03983C00694310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0076A0822B03983C00694310 /* Assets.xcassets */; };
 		0076A0862B03983C00694310 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0076A0852B03983C00694310 /* Preview Assets.xcassets */; };
 		0076A0902B03983C00694310 /* TodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A08F2B03983C00694310 /* TodoTests.swift */; };
@@ -52,7 +51,6 @@
 /* Begin PBXFileReference section */
 		0076A07B2B03983B00694310 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0076A07E2B03983B00694310 /* TodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoApp.swift; sourceTree = "<group>"; };
-		0076A0802B03983B00694310 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0076A0822B03983C00694310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0076A0852B03983C00694310 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0076A08B2B03983C00694310 /* TodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				0076A07E2B03983B00694310 /* TodoApp.swift */,
-				0076A0802B03983B00694310 /* ContentView.swift */,
 				0076A0CE2B043DE900694310 /* NotesView.swift */,
 			);
 			path = View;
@@ -372,7 +369,6 @@
 				0076A0B42B03FF7800694310 /* TodoViewModel.swift in Sources */,
 				0076A0BD2B0436DD00694310 /* RestRequestContract.swift in Sources */,
 				0076A0D22B043F9000694310 /* TodosApp.xcdatamodeld in Sources */,
-				0076A0812B03983B00694310 /* ContentView.swift in Sources */,
 				0076A0C32B04383C00694310 /* NetworkClient.swift in Sources */,
 				0076A07F2B03983B00694310 /* TodoApp.swift in Sources */,
 				0076A0B82B04343B00694310 /* LocalCacheManager.swift in Sources */,
