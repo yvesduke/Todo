@@ -18,3 +18,5 @@ struct Todo: Codable {
 //        case id, title, completed
 //    }
 }
+
+extension Todo: Identifiable {}

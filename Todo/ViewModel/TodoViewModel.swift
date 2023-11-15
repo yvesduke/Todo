@@ -15,13 +15,13 @@ enum ViewStates {
 }
 
 @MainActor
-final class NotesViewModel: ObservableObject {
+final class TodosViewModel: ObservableObject {
     
     private let networkClient: NetworkClientContract
     private let localCacheManager: LocalCacheManagerContract
 
     @Published private(set) var viewState: ViewStates = .loaded
-    private(set) var notes: [Note] = []
+    private(set) var todos: [Todo] = []
     
     init(networkClient: NetworkClientContract = NetworkClient(), localCacheManager: LocalCacheManagerContract = CacheManager()) {
         self.networkClient = networkClient
@@ -29,29 +29,29 @@ final class NotesViewModel: ObservableObject {
     }
 }
 
-extension NotesViewModel {
+extension TodosViewModel {
 
-    func getNotes() async {
-        let request = NoteRequest()
+    func getTodos() async {
+        let request = TodoRequest()
         do {
             let response = try await networkClient.request(request)
-            let notes = try JSONDecoder().decode([Note].self, from: response)
-            self.notes = notes
+            let todos = try JSONDecoder().decode([Todo].self, from: response)
+            self.todos = todos
             viewState = .loaded
-            localCacheManager.saveNote(notes: notes)
+            localCacheManager.saveTodo(todos: todos)
         } catch {
-            notes =  localCacheManager.fetchNotes()
-            viewState = notes.isEmpty ? .emptyView: .loaded
+            todos =  localCacheManager.fetchTodos()
+            viewState = todos.isEmpty ? .emptyView: .loaded
         }
     }
     
-    func deleteNote(index: Int) {
-        let note = self.notes[index]
-        let notesRequest =  NoteDeleteRequest(noteId: note.id)
+    func deleteTodo(index: Int) {
+        let todo = self.todos[index]
+        let todosRequest =  TodoDeleteRequest(todoId: todo.id)
         Task {
             do {
-                let _ = try await networkClient.request(notesRequest)
-                await getNotes()
+                let _ = try await networkClient.request(todosRequest)
+                await getTodos()
             } catch {
                 
             }

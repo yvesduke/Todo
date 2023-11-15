@@ -1,5 +1,5 @@
 //
-//  ENotes+Extension.swift
+//  ETodos+Extension.swift
 //  Todo
 //
 //  Created by Yves Dukuze on 14/11/2023.
@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 
 extension ETodos {
+    
     static func saveTodos(_ todos: [Todo], moc: NSManagedObjectContext) throws {
         
         todos.forEach { todo in
@@ -22,12 +23,12 @@ extension ETodos {
         try moc.save()
     }
     
-    static func fetchNotes(moc: NSManagedObjectContext)-> [ETodos] {
+    static func fetchTodos(moc: NSManagedObjectContext)-> [ETodos] {
         let fr = ETodos.fetchRequest()
         return (try? moc.fetch(fr)) ?? []
     }
     
-    static func deleteNotesRecords(moc: NSManagedObjectContext) throws {
+    static func deleteTodosRecords(moc: NSManagedObjectContext) throws {
         let items =  ETodos.fetchTodos(moc: moc)
         items.forEach {
             moc.delete($0)

@@ -1,5 +1,5 @@
 //
-//  NoteView.swift
+//  TodoView.swift
 //  Todo
 //
 //  Created by Yves Dukuze on 14/11/2023.
@@ -8,11 +8,11 @@
 import SwiftUI
 
 enum NavigationTrack {
-    case addNotes
+    case addTodos
 }
 
-struct NotesView: View {
-    @StateObject var viewModel: NotesViewModel
+struct TodosView: View {
+    @StateObject var viewModel: TodosViewModel
     @State private var isErrorOccured = true
     @State var path: [NavigationTrack] = []
 
@@ -23,7 +23,7 @@ struct NotesView: View {
                 case .loading:
                     ProgressView()
                 case .loaded:
-                    NotesListView()
+                    TodosListView()
                 case .error:
                     showErrorView()
                 case .emptyView:
@@ -32,7 +32,7 @@ struct NotesView: View {
             }.toolbar {
                 ToolbarItem(placement:.navigationBarTrailing) {
                     Button {
-                        path.append(.addNotes)
+                        path.append(.addTodos)
                     } label: {
                         Label("Add Item", systemImage: "plus")
                     }
@@ -41,30 +41,30 @@ struct NotesView: View {
                     EditButton()
                 }
             }
-            .navigationTitle(Text(LocalizedStringKey("Notes")))
+            .navigationTitle(Text(LocalizedStringKey("Todos")))
             .navigationDestination(for: NavigationTrack.self) { page in
                 switch page {
-                case .addNotes:
-                    AddNoteView(path: $path)
+                case .addTodos:
+                    AddTodoView(path: $path)
                 }
             }.onAppear {
                 Task {
-                    await viewModel.getNotes()
+                    await viewModel.getTodos()
                 }
             }
         }
     }
     @ViewBuilder
-    func NotesListView() -> some View {
+    func TodosListView() -> some View {
         List {
-            ForEach(viewModel.notes) { note in
+            ForEach(viewModel.todos) { todo in
                 NavigationLink {
-                    Text(note.name)
+                    Text(todo.title)
                 } label: {
                     HStack {
                         VStack(alignment: .leading) {
-                            Text(note.name )
-                            Text(note.description )
+                            Text(todo.title )
+                            Text(todo.title )
                         }
                         Spacer()
                     }
@@ -72,7 +72,7 @@ struct NotesView: View {
             }
             .onDelete { offSet in
                 if let index = offSet.first {
-                    viewModel.deleteNote(index: index)
+                    viewModel.deleteTodo(index: index)
                 }
             }
         }
@@ -86,8 +86,8 @@ struct NotesView: View {
     }
 }
 
-struct NotesView_Previews: PreviewProvider {
+struct TodosView_Previews: PreviewProvider {
     static var previews: some View {
-        NotesView(viewModel: NotesViewModel())
+        TodosView(viewModel: TodosViewModel())
     }
 }
