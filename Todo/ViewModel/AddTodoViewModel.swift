@@ -22,9 +22,13 @@ class AddTodoViewModel: ObservableObject {
 }
 
 extension AddTodoViewModel {
-    func addTodo(name: String, desc: String) {
+    
+    func addTodo(userId: Int, id: Int, title: String, completed: Bool) {
+        
         viewState =  .loading
-        let todoAddRequest = TodoAddRequest(name:name, desc: desc)
+        
+        let todoAddRequest = TodoAddRequest(userId: userId, id: id, title: title, completed: completed)
+        
         Task {
             do {
                 let _ = try await networkClient.request(todoAddRequest)
@@ -34,4 +38,5 @@ extension AddTodoViewModel {
             }
         }
     }
+    
 }

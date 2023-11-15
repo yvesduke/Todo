@@ -14,10 +14,10 @@ extension ETodos {
         
         todos.forEach { todo in
             let eTodo = ETodos(context: moc)
-            eTodo.name = todo.title
-            eTodo.desc = todo.title
+            eTodo.title = todo.title
+            eTodo.userId = Int16(todo.userID)
             eTodo.id = Int16(todo.id)
-//            eTodo.timestamp = todo.userID
+            eTodo.completed = todo.completed
         }
    
         try moc.save()

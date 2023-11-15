@@ -26,7 +26,7 @@
 		0076A0C92B0439B800694310 /* TodoAddRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A0C82B0439B800694310 /* TodoAddRequest.swift */; };
 		0076A0CB2B043A7B00694310 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A0CA2B043A7B00694310 /* AddTodoView.swift */; };
 		0076A0CD2B043A8E00694310 /* AddTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A0CC2B043A8E00694310 /* AddTodoViewModel.swift */; };
-		0076A0CF2B043DE900694310 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A0CE2B043DE900694310 /* NotesView.swift */; };
+		0076A0CF2B043DE900694310 /* TodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A0CE2B043DE900694310 /* TodosView.swift */; };
 		0076A0D22B043F9000694310 /* TodosApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0076A0D02B043F9000694310 /* TodosApp.xcdatamodeld */; };
 		0076A0D42B043FC200694310 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A0D32B043FC200694310 /* Persistence.swift */; };
 /* End PBXBuildFile section */
@@ -71,7 +71,7 @@
 		0076A0C82B0439B800694310 /* TodoAddRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAddRequest.swift; sourceTree = "<group>"; };
 		0076A0CA2B043A7B00694310 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 		0076A0CC2B043A8E00694310 /* AddTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewModel.swift; sourceTree = "<group>"; };
-		0076A0CE2B043DE900694310 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		0076A0CE2B043DE900694310 /* TodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosView.swift; sourceTree = "<group>"; };
 		0076A0D12B043F9000694310 /* TodosApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodosApp.xcdatamodel; sourceTree = "<group>"; };
 		0076A0D32B043FC200694310 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,10 +126,8 @@
 			children = (
 				0076A0D02B043F9000694310 /* TodosApp.xcdatamodeld */,
 				0076A0D32B043FC200694310 /* Persistence.swift */,
-				0076A0B22B03FA5900694310 /* AddTodo */,
 				0076A0B12B03FA2200694310 /* Networking */,
 				0076A0B02B03FA1600694310 /* LocalCaching */,
-				0076A0AB2B03A02100694310 /* Repository */,
 				0076A0AA2B03A01900694310 /* View */,
 				0076A0A92B03A01000694310 /* ViewModel */,
 				0076A0A82B03A00900694310 /* Model */,
@@ -175,6 +173,7 @@
 		0076A0A92B03A01000694310 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0076A0CC2B043A8E00694310 /* AddTodoViewModel.swift */,
 				0076A0B32B03FF7800694310 /* TodoViewModel.swift */,
 			);
 			path = ViewModel;
@@ -183,17 +182,11 @@
 		0076A0AA2B03A01900694310 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0076A0CA2B043A7B00694310 /* AddTodoView.swift */,
+				0076A0CE2B043DE900694310 /* TodosView.swift */,
 				0076A07E2B03983B00694310 /* TodoApp.swift */,
-				0076A0CE2B043DE900694310 /* NotesView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		0076A0AB2B03A02100694310 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
 			sourceTree = "<group>";
 		};
 		0076A0B02B03FA1600694310 /* LocalCaching */ = {
@@ -215,15 +208,6 @@
 				0076A0C22B04383C00694310 /* NetworkClient.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		0076A0B22B03FA5900694310 /* AddTodo */ = {
-			isa = PBXGroup;
-			children = (
-				0076A0CA2B043A7B00694310 /* AddTodoView.swift */,
-				0076A0CC2B043A8E00694310 /* AddTodoViewModel.swift */,
-			);
-			path = AddTodo;
 			sourceTree = "<group>";
 		};
 		0076A0BB2B0436B800694310 /* Requests */ = {
@@ -378,7 +362,7 @@
 				0076A0C12B0437B800694310 /* Path.swift in Sources */,
 				0076A0BF2B04376E00694310 /* RestEndPoints.swift in Sources */,
 				0076A0C92B0439B800694310 /* TodoAddRequest.swift in Sources */,
-				0076A0CF2B043DE900694310 /* NotesView.swift in Sources */,
+				0076A0CF2B043DE900694310 /* TodosView.swift in Sources */,
 				0076A0CD2B043A8E00694310 /* AddTodoViewModel.swift in Sources */,
 				0076A0C52B04388E00694310 /* TodoRequest.swift in Sources */,
 				0076A0C72B0439A700694310 /* TodoDeleteRequest.swift in Sources */,
